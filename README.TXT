@@ -1,49 +1,24 @@
-ÊµÑéÆ÷²Ä:
-	Õ½½¢STM32F103¿ª·¢°åV3°æ±¾
+å™¨æ:
+	ç²¾è‹±STM32F103å¼€å‘æ¿ZET6
 	
-ÊµÑéÄ¿µÄ:
-	Ñ§Ï°STM32ÄÚ²¿ÎÂ¶È´«¸ÐÆ÷µÄÊ¹ÓÃ
+ç›®çš„:
+	MMA7361ä¸‰è½´æŒ¯åŠ¨ä¼ æ„Ÿå™¨+GYMCU680(çŽ¯å¢ƒæ¸©æ¹¿åº¦+æ°”åŽ‹+ç©ºæ°”è´¨é‡)+ATK-BD-GPS+PT100æ²¹æ¸©+WSCç”µæµä¼ æ„Ÿå™¨+ESP8266æœ¬åœ°æœåŠ¡å™¨+rs485+modbus
 	
-Ó²¼þ×ÊÔ´:
-	1,DS0(Á¬½ÓÔÚPB5)
-	2,´®¿Ú1(²¨ÌØÂÊ:115200,PA9/PA10Á¬½ÓÔÚ°åÔØUSB×ª´®¿ÚÐ¾Æ¬CH340ÉÏÃæ)
-	3,ALIENTEK 2.8/3.5/4.3/7´çTFTLCDÄ£¿é(Í¨¹ýFSMCÇý¶¯,FSMC_NE4½ÓLCDÆ¬Ñ¡/A10½ÓRS) 
-	4,ADC(STM32ÄÚ²¿ADC1,Í¨µÀ16,¼´:ADC1_CH16)
-	5,ÄÚ²¿ÎÂ¶È´«¸ÐÆ÷,Á¬½ÓÔÚADC1_CH16ÉÏÃæ.
+ç¡¬ä»¶èµ„æº:
+	1,ESP8266ä½¿ç”¨ä¸²å£4é€šä¿¡ï¼ŒæŽ¥çº¿æ–¹å¼ï¼š
+	vcc-5vï¼›gnd-gndï¼›TXD-PC11;RXD-PC10;RST-PA12;I0_0-PA15.
+	2,ä¸²å£1(æ³¢ç‰¹çŽ‡:115200,PA9/PA10è¿žæŽ¥åœ¨æ¿è½½USBè½¬ä¸²å£èŠ¯ç‰‡CH340ä¸Šé¢)ç”¨äºŽæ‰“å°æ•°æ®è‡³ä¸²å£åŠ©æ‰‹ã€‚
+	3,PT100ä¸²å£é€šä¿¡æ–¹å¼ä¸ºSPIé€šä¿¡ï¼ŒæŽ¥çº¿æ–¹å¼ï¼š
+	VIN-5V;GND-GND;SDO-PA6;CS-PA11;SCLK-PA8;SDI-PA7;DRDY-PA5.
+	4,GYMCU680ä½¿ç”¨ä¸²å£2é€šä¿¡ï¼ŒæŽ¥çº¿æ–¹å¼ï¼š
+	VCC-5V;GND-GND;RX-PA2;TX-PA3.
+	5,WSCç”µæµä¼ æ„Ÿå™¨ä½¿ç”¨ADC1æŽ¥çº¿ï¼Œä½¿ç”¨ADC(STM32å†…éƒ¨ADC1,é€šé“16,å³:ADC1_CH16).
+	6,ATK-BD-GPSä½¿ç”¨ä¸²å£3é€šä¿¡ï¼ŒæŽ¥çº¿æ–¹å¼ï¼š
+	PPS-KEY;RXD-RXD;TXD-TXD;GND-GND;VCC-5V.
 	
-ÊµÑéÏÖÏó:
-	±¾ÊµÑéÍ¨¹ýADC1µÄÍ¨µÀ16¶ÁÈ¡STM32ÄÚ²¿ÎÂ¶È´«¸ÐÆ÷µÄµçÑ¹Öµ£¬²¢½«Æä×ª»»ÎªÎÂ¶ÈÖµ£¬ÏÔÊ¾ÔÚLCDÄ£¿éÉÏ¡£
-	
-×¢ÒâÊÂÏî:
-	1,4.3´çºÍ7´çÆÁÐèÒª±È½Ï´óµçÁ÷,USB¹©µç¿ÉÄÜ²»×ã,ÇëÓÃÍâ²¿µçÔ´ÊÊÅäÆ÷(ÍÆ¼öÍâ½Ó12V 1AµçÔ´).
-	2,±¾Àý³ÌÔÚLCD_Initº¯ÊýÀïÃæ(ÔÚILI93xx.c),ÓÃµ½ÁËprintf,Èç¹û²»³õÊ¼»¯´®¿Ú1,½«µ¼ÖÂÒº¾§ÎÞ·¨ÏÔÊ¾!!   
-	3,ADCµÄ²Î¿¼µçÑ¹Ä¬ÈÏÍ¨¹ýP5Á¬½ÓÔÚVDDAÉÏÃæ(3.3V),ËùÒÔÄ¬ÈÏ²Î¿¼µçÑ¹ÊÇ3.3V
-	4,STM32ÄÚ²¿ÎÂ¶È´«¸ÐÆ÷µÄ¾«¶È²»ÊÇºÜ¸ß,¶øÇÒÓÉÓÚMCU·¢ÈÈ,ËùÒÔ,Ò»°ã²â³öµÄÎÂ¶È»á±ÈÊµ¼ÊÎÂ¶È¸ßÒ»Ð©.
-
--------------------------------------------------------------------------------------------
-¡ôÆäËûÖØÒªÁ¬½Ó£º
-  ¿ª·¢°å¹âÅÌ×ÊÁÏÏÂÔØµØÖ·£¨ÊÓÆµ+ÎÄµµ+Ô´ÂëµÈ£©£ºhttp://www.openedv.com/posts/list/13912.htm
-  Ìí¼ÓÎ¢ÐÅ¹«ÖÚÆ½Ì¨·½·¨£ºhttp://www.openedv.com/posts/list/45157.htm
-  
-
-¡ôÓÑÇéÌáÊ¾£ºÈç¹ûÄúÏëÒÔºó¼°Ê±Ãâ·ÑµÄÊÕµ½ÕýµãÔ­×ÓËùÓÐ¿ª·¢°å×ÊÁÏ¸üÐÂÔö¼ÓÍ¨Öª£¬Çë¹Ø×¢Î¢ÐÅ¹«ÖÚÆ½Ì¨£º
-
- 2ÖÖÌí¼Ó·½·¨£º£¨¶¯¶¯ÊÖÌáÉýÄúµÄÑ§Ï°Ð§ÂÊ£¬¾ªÏ²²»¶ÏÅ¶£©
-£¨1£©´ò¿ªÎ¢ÐÅ->Ìí¼ÓÅóÓÑ->¹«ÖÚºÅ->ÊäÈë¡°ÕýµãÔ­×Ó¡±->µã»÷¹Ø×¢
-£¨2£©´ò¿ªÎ¢ÐÅ->Ìí¼ÓÅóÓÑ->ÊäÈë¡°alientek_stm32"->µã»÷¹Ø×¢
-
- ¾ßÌåÎ¢ÐÅÌí¼Ó·½·¨£¬Çë²Î¿¼Ìû×Ó£ºhttp://www.openedv.com/posts/list/45157.htm
-
- 
-
-			ÕýµãÔ­×Ó@ALIENTEK 
-			¹ãÖÝÊÐÐÇÒíµç×Ó¿Æ¼¼ÓÐÏÞ¹«Ë¾
-			µç»°£º020-38271790
-			´«Õæ£º020-36773971
-			¹ºÂò£ºhttp://eboard.taobao.com
-			¹«Ë¾ÍøÕ¾£ºwww.alientek.com
-			¼¼ÊõÂÛÌ³£ºwww.openedv.com
-
+çŽ°è±¡:
+	æœ¬é¡¹ç›®é€šè¿‡ä¸²å£5è¿›è¡Œ485é€šä¿¡ï¼ŒADC1è¯»å–ä¸‰è½´æŒ¯åŠ¨ä¿¡å·ï¼Œä¸²å£2è¯»å–çŽ¯å¢ƒæ¸©æ¹¿åº¦ç­‰ï¼Œä¸²å£3è¿žæŽ¥BDç›‘æµ‹ç»çº¬åº¦ï¼ŒSPIæ£€æµ‹PT100é€šé“çš„ç”µæœºç»•ç»„æ¸©åº¦ï¼Œé€šè¿‡ä¸²å£4è¿žæŽ¥ESP8266å°†ä¼ æ„Ÿå™¨æ•°æ®ä¸Šä¼ è‡³æœ¬åœ°EMQæœåŠ¡å™¨ã€‚å¯å®žçŽ°ä¼ æ„Ÿæ•°æ®å®žæ—¶ä¸Šä¼ è‡³EMQæœåŠ¡å™¨ï¼Œé€šè¿‡Node-redä¿å­˜è‡³Influxdbæ—¶åºæ•°æ®åº“ï¼ŒGrafanaæ•°æ®çœ‹æ¿å±•ç¤ºåŠŸèƒ½ã€‚åŒæ—¶é€šè¿‡æœ¬åœ°PLCç³»ç»Ÿå®žçŽ°çŽ°åœºæŽ§åˆ¶ã€‚
+	é€šä¿¡åè®®ä¸ºMQTTåè®®ï¼Œæœ¬åœ°ä½¿ç”¨MODBUS+RS485é€šä¿¡ã€‚
 
 
 
