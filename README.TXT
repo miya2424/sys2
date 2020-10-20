@@ -12,9 +12,10 @@
 	VIN-5V;GND-GND;SDO-PA6;CS-PA11;SCLK-PA8;SDI-PA7;DRDY-PA5.
 	4,GYMCU680使用串口2通信，接线方式：
 	VCC-5V;GND-GND;RX-PA2;TX-PA3.
-	5,WSC电流传感器使用ADC1接线，使用ADC(STM32内部ADC1,通道16,即:ADC1_CH16).
-	6,ATK-BD-GPS使用串口3通信，接线方式：
+	5,ATK-BD-GPS使用串口3通信，接线方式：
 	PPS-KEY;RXD-RXD;TXD-TXD;GND-GND;VCC-5V.
+	6.MMA7361使用ADC通信，接线方式：x-PC1;3V3-3.3V;GND-GND;SLEEPPIN-PC5;SELFTEST-PC4;GSELECT-PC0.(STM32内部ADC1,通道16,即:ADC1_CH16).
+	7.RS-485接线方式：RS485_A-T/R+;RS485_B-T/R-;GND-GND.
 	
 现象:
 	本项目通过串口5进行485通信，ADC1读取三轴振动信号，串口2读取环境温湿度等，串口3连接BD监测经纬度，SPI检测PT100通道的电机绕组温度，通过串口4连接ESP8266将传感器数据上传至本地EMQ服务器。可实现传感数据实时上传至EMQ服务器，通过Node-red保存至Influxdb时序数据库，Grafana数据看板展示功能。同时通过本地PLC系统实现现场控制。
