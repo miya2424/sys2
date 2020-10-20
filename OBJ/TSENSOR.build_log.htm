@@ -1,0 +1,139 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.21.1.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: JIE Admin, JIE, LIC=FYKYW-QU1SD-45GT5-G7KVQ-IYFS3-6VVMA
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.21a
+Toolchain Path:  F:\soft\keil5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 3 (build 300)
+Assembler:       Armasm.exe V5.06 update 3 (build 300)
+Linker/Locator:  ArmLink.exe V5.06 update 3 (build 300)
+Library Manager: ArmAr.exe V5.06 update 3 (build 300)
+Hex Converter:   FromElf.exe V5.06 update 3 (build 300)
+CPU DLL:         SARMCM3.DLL V5.21a
+Dialog DLL:      DCM.DLL V1.13.8.0
+Target DLL:      UL2CM3.DLL V1.158.5.0
+Dialog DLL:      TCM.DLL V1.14.14.0
+ 
+<h2>Project:</h2>
+E:\数据上传\3\USER\TSENSOR.uvprojx
+Project File Date:  10/15/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 3 (build 300)', folder: 'F:\soft\keil5\ARM\ARMCC\Bin'
+Rebuild target 'TSENSOR'
+compiling key.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling stm32f10x_dma.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling mma7361.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling system_stm32f10x.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling stm32f10x_it.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling adcdouble.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling main.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+main.c(437): warning:  #223-D: function "TIM5_Init" declared implicitly
+  		TIM5_Init(); 
+main.c(440): warning:  #177-D: variable "lenx" was declared but never referenced
+  	u16 lenx;
+main.c(443): warning:  #177-D: variable "adcx" was declared but never referenced
+  	u16 adcx,ic;
+main.c(443): warning:  #177-D: variable "ic" was declared but never referenced
+  	u16 adcx,ic;
+main.c(444): warning:  #177-D: variable "temp" was declared but never referenced
+  	float temp;
+main.c(447): warning:  #550-D: variable "temp4" was set but never used
+  	short temp4;
+main.c: 6 warnings, 0 errors
+compiling SysTick.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling crc16.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling system.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling rs485.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+..\HARDWARE\MODBUS\rs485.c(131): warning:  #940-D: missing return statement at end of non-void function "rs485_UartWrite"
+  }
+..\HARDWARE\MODBUS\rs485.c: 1 warning, 0 errors
+compiling mqtt.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+..\HARDWARE\MQTT\mqtt.c(120): warning:  #225-D: the format string ends before this argument
+  	sprintf(ClientID,"1",
+EVICENAME);  //构建?突Ф?ID，并???牖?????
+..\HARDWARE\MQTT\mqtt.c(124): warning:  #224-D: the format string requires additional arguments
+  	sprintf(Username,"%admin");                      //构建?没??⒋??牖?????
+..\HARDWARE\MQTT\mqtt.c: 2 warnings, 0 errors
+compiling wifi.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling uart4.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling timer.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling timer4.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling timer1.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling timer2.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling timer3.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling gps.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling led.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling lcd.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+..\HARDWARE\LCD\lcd.c(720): warning:  #223-D: function "printf" declared implicitly
+   	printf(" LCD ID:%x\r\n",lcddev.id); //??印LCD ID   
+..\HARDWARE\LCD\lcd.c: 1 warning, 0 errors
+compiling nvic.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling max31865.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling delay.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+assembling startup_stm32f10x_hd.s...
+compiling usart.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling core_cm3.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling sys.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling misc.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling stm32f10x_usart.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling stm32f10x_gpio.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling stm32f10x_fsmc.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling stm32f10x_adc.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling stm32f10x_rcc.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+compiling stm32f10x_tim.c...
+Warning: C3910W: Old syntax, please use '--c99'.
+linking...
+Program Size: Code=67660 RO-data=8220 RW-data=376 ZI-data=60816  
+FromELF: creating hex file...
+"..\OBJ\TSENSOR.axf" - 0 Error(s), 10 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  E:\数据上传\3\USER\RTE
+  F:\soft\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:06
+</pre>
+</body>
+</html>
